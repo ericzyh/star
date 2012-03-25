@@ -7,3 +7,9 @@
 
 类似豆瓣电影评分功能
 
+配置项：
+{"initscore":"0","total":"5","show":false,"mpic":"","lpic":""};
+initscore 初始分数
+total     总分
+mpic      不亮的图片
+lpic      亮的图片
