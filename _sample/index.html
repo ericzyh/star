@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>star - easy sample</title>
+<script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/1.5.2/jquery.js" ></script>
+<script src="../src/jquery.star.min.js"></script>   
+</head>
+<body>
+初始分(init star):<input id="initvalue" value="0"/>
+总分(total star):<input id="totalvalue" value="5"/>
+灰色图片(gray star):<input id="gray" value="./gray.gif"/>
+点亮图片(light star):<input id="light" value="./light.gif"/>
+<button id="r">重置积分(reset star)</button>
+<div style="margin:80px;font-size:30px;text-align: center">
+star:<span class="star"></span>
+<button id="j">计算积分(return star)</button>
+</div>
+</body>
+</html>
+<script> 
+$(function(){ 
+	$("button#r").click(function(){
+		var init = $("#initvalue").val();
+		var total = $("#totalvalue").val();
+		var gray = $("#gray").val();
+		var light = $("#light").val();
+		$(".star").html("");
+		var star = $(".star").score({"initscore":init,"total":total,"mpic":gray,"lpic":light});//important 重要 
+		$("button#j").unbind("click").click(function(){alert(star.value)});
+	});
+	$("button#r").click();
+}); 
+</script>
+
